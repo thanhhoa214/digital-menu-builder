@@ -5,7 +5,6 @@ export interface Product {
   price: number;
   src: string;
   storeId: string;
-  isAvailable: boolean;
 }
 
 export type Products = Array<Product>;
