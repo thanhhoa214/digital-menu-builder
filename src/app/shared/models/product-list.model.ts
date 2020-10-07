@@ -3,5 +3,6 @@ export interface ProductList {
   title: string;
   boxId: number;
   maxSize: number;
-  isAvailable: boolean;
 }
+
+export type ProductLists = Array<ProductList>;
