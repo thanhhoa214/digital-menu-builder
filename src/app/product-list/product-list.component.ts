@@ -19,7 +19,6 @@ export class ProductListComponent implements OnInit {
     title: 'Today Special',
     boxId: 1,
     maxSize: 6,
-    isAvailable: true,
   };
   @Input() products: Products = [
     {
