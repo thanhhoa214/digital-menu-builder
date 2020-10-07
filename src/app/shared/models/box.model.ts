@@ -9,7 +9,6 @@ export interface Box {
   footerTitle: string;
   headerSrc: string;
   footerSrc: string;
-  isAvailable: boolean;
 }
 
 export type Boxes = Array<Box>;
