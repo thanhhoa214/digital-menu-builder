@@ -21,7 +21,56 @@ export class ProductListComponent implements OnInit {
     maxSize: 6,
     isAvailable: true,
   };
-  @Input() products: Products = [];
+  @Input() products: Products = [
+    {
+      id: 1,
+      title: 'Hello World',
+      description: 'description',
+      price: 123123,
+      src: null,
+      storeId: null,
+    },
+    {
+      id: 2,
+      title: 'Hello World',
+      description: 'description',
+      price: 123123,
+      src: null,
+      storeId: null,
+    },
+    {
+      id: 2,
+      title: 'Hello World',
+      description: 'description',
+      price: 123123,
+      src: null,
+      storeId: null,
+    },
+    {
+      id: 2,
+      title: 'Hello World',
+      description: 'description',
+      price: 123123,
+      src: null,
+      storeId: null,
+    },
+    {
+      id: 2,
+      title: 'Hello World',
+      description: 'description',
+      price: 123123,
+      src: null,
+      storeId: null,
+    },
+    {
+      id: 2,
+      title: 'Hello World',
+      description: 'description',
+      price: 123123,
+      src: null,
+      storeId: null,
+    },
+  ];
 
   constructor() {}
 
