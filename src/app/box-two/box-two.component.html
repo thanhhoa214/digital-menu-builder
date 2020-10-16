@@ -1,1 +1,4 @@
-<p>box-two works!</p>
+<ng-container *ngIf="box">
+  <app-product-list [productList]="box.productLists[0]"></app-product-list>
+  <app-product-list [productList]="box.productLists[1]"></app-product-list>
+</ng-container>

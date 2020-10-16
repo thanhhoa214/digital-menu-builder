@@ -1,1 +1,6 @@
-<p>box-one works!</p>
+<ng-container *ngIf="box"
+  ><div class="mb-2 media-box">
+    <img [src]="'assets/image.jpeg'" class="img-fluid" alt="" />
+  </div>
+  <app-product-list [productList]="box.productLists[0]"></app-product-list
+></ng-container>

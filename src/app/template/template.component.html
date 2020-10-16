@@ -1,5 +1,11 @@
-<div class="row">
-  <div class="col-4">
-    <app-box> </app-box>
+<div class="row mx-0" *ngIf="template$ | async as template">
+  <div class="col-4 px-0">
+    <app-box-one [box]="template.boxes[0]"></app-box-one>
+  </div>
+  <div class="col-4 px-0">
+    <app-box-two [box]="template.boxes[1]"></app-box-two>
+  </div>
+  <div class="col-4 px-0">
+    <app-box-three [box]="template.boxes[2]"></app-box-three>
   </div>
 </div>

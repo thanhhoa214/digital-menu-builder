@@ -7,6 +7,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BoxComponent implements OnInit {
+  ownName = 'swd-box';
   constructor() {}
 
   ngOnInit(): void {}

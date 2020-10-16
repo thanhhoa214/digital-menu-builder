@@ -2,9 +2,10 @@ export interface Product {
   id: number;
   title: string;
   description: string;
-  price: number;
+  price: string | number;
   src: string;
-  storeId: string;
+  storeId?: string;
+  location?: number;
 }
 
 export type Products = Array<Product>;

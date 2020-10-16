@@ -5,8 +5,13 @@ import {
   Input,
 } from '@angular/core';
 import { ProductList } from '../shared/models/product-list.model';
-import { Products } from '../shared/models/product.model';
 
+const initAttributes: ProductList = {
+  id: 1,
+  title: 'Today Special',
+  boxId: 1,
+  maxSize: 6,
+};
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -14,64 +19,71 @@ import { Products } from '../shared/models/product.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent implements OnInit {
-  @Input() attribute: ProductList = {
+  ownName: 'swd-product-list';
+  @Input() productList: ProductList = {
     id: 1,
     title: 'Today Special',
     boxId: 1,
     maxSize: 6,
+    products: [
+      {
+        id: 1,
+        title: 'Hello World',
+        description: 'description',
+        price: '123123',
+        src: null,
+        storeId: null,
+      },
+      {
+        id: 2,
+        title: 'Hello World',
+        description: 'description',
+        price: '123123',
+        src: null,
+        storeId: null,
+      },
+      {
+        id: 2,
+        title: 'Hello World',
+        description: 'description',
+        price: '123123',
+        src: null,
+        storeId: null,
+      },
+      {
+        id: 2,
+        title: 'Hello World',
+        description: 'description',
+        price: '123123',
+        src: null,
+        storeId: null,
+      },
+      {
+        id: 2,
+        title: 'Hello World',
+        description: 'description',
+        price: '123123',
+        src: null,
+        storeId: null,
+      },
+      {
+        id: 2,
+        title: 'Hello World',
+        description: 'description',
+        price: '123123',
+        src: null,
+        storeId: null,
+      },
+    ],
   };
-  @Input() products: Products = [
-    {
-      id: 1,
-      title: 'Hello World',
-      description: 'description',
-      price: 123123,
-      src: null,
-      storeId: null,
-    },
-    {
-      id: 2,
-      title: 'Hello World',
-      description: 'description',
-      price: 123123,
-      src: null,
-      storeId: null,
-    },
-    {
-      id: 2,
-      title: 'Hello World',
-      description: 'description',
-      price: 123123,
-      src: null,
-      storeId: null,
-    },
-    {
-      id: 2,
-      title: 'Hello World',
-      description: 'description',
-      price: 123123,
-      src: null,
-      storeId: null,
-    },
-    {
-      id: 2,
-      title: 'Hello World',
-      description: 'description',
-      price: 123123,
-      src: null,
-      storeId: null,
-    },
-    {
-      id: 2,
-      title: 'Hello World',
-      description: 'description',
-      price: 123123,
-      src: null,
-      storeId: null,
-    },
-  ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  getFilteredProducts() {
+    return this.productList.products?.filter(
+      (_, i) => i < this.productList.maxSize
+    );
+  }
 }

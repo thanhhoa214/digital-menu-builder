@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { Injector, NgModule } from '@angular/core';
+import { Injector, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BoxComponent } from './box/box.component';
 import { TemplateComponent } from './template/template.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -8,24 +9,31 @@ import { BoxTwoComponent } from './box-two/box-two.component';
 import { BoxThreeComponent } from './box-three/box-three.component';
 import { createCustomElement } from '@angular/elements';
 
+const components = [
+  BoxComponent,
+  TemplateComponent,
+  ProductListComponent,
+  BoxOneComponent,
+  BoxTwoComponent,
+  BoxThreeComponent,
+];
 @NgModule({
-  imports: [BrowserModule],
-  // bootstrap: [TemplateComponent],
-  declarations: [
-    BoxComponent,
-    TemplateComponent,
-    ProductListComponent,
-    BoxOneComponent,
-    BoxTwoComponent,
-    BoxThreeComponent,
-  ],
+  imports: [BrowserModule, HttpClientModule],
+  bootstrap: [TemplateComponent],
+  declarations: components,
+  entryComponents: components,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
   constructor(private _injector: Injector) {}
+
   ngDoBootstrap() {
-    const element = createCustomElement(TemplateComponent, {
-      injector: this._injector,
+    components.forEach((component, index) => {
+      const element = createCustomElement(component, {
+        injector: this._injector,
+      });
+
+      customElements.define('swd-' + index, element);
     });
-    customElements.define('custom-template', element);
   }
 }
