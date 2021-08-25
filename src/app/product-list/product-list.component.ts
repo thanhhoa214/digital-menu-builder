@@ -5,13 +5,6 @@ import {
   Input,
 } from '@angular/core';
 import { ProductList } from '../shared/models/product-list.model';
-
-const initAttributes: ProductList = {
-  id: 1,
-  title: 'Today Special',
-  boxId: 1,
-  maxSize: 6,
-};
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',

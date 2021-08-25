@@ -9,9 +9,6 @@ export class TemplateService {
   constructor(private _http: HttpClient) {}
 
   getTemplateById(id: string): Observable<Template> {
-    return this._http.get<Template>(
-      `${environment.API_URL}templates/${id}`,
-      {}
-    );
+    return this._http.get<Template>(`${environment.API_URL}templates/${id}/`);
   }
 }

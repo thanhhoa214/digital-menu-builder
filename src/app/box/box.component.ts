@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Box } from '../shared/models/box.model';
 
 @Component({
   selector: 'app-box',
@@ -6,9 +7,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BoxComponent implements OnInit {
+export class BoxComponent {
+  @Input() box: Box;
   ownName = 'swd-box';
-  constructor() {}
-
-  ngOnInit(): void {}
 }

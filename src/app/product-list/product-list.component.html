@@ -1,8 +1,12 @@
 <div class="bg-lightblue">
-  <h1 class="bg-lightblue pl-3">{{ productList.title }}</h1>
+  <h1 id="title" class="bg-lightblue pl-3">{{ productList.title }}</h1>
 </div>
 <div class="pl-3">
-  <div class="row mx-0 pt-2" *ngFor="let product of getFilteredProducts()">
+  <div
+    class="row mx-0 pt-2"
+    id="products"
+    *ngFor="let product of getFilteredProducts()"
+  >
     <div class="col-8">
       <h6>{{ product.title }}</h6>
       <p>{{ product.description }}</p>

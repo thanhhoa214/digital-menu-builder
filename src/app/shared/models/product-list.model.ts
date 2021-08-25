@@ -6,6 +6,7 @@ export interface ProductList {
   boxId: number;
   maxSize: number;
   products?: Products;
+  location?: number;
 }
 
 export type ProductLists = Array<ProductList>;

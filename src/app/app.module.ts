@@ -4,19 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BoxComponent } from './box/box.component';
 import { TemplateComponent } from './template/template.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { BoxOneComponent } from './box-one/box-one.component';
-import { BoxTwoComponent } from './box-two/box-two.component';
-import { BoxThreeComponent } from './box-three/box-three.component';
 import { createCustomElement } from '@angular/elements';
 
-const components = [
-  BoxComponent,
-  TemplateComponent,
-  ProductListComponent,
-  BoxOneComponent,
-  BoxTwoComponent,
-  BoxThreeComponent,
-];
+const components = [BoxComponent, TemplateComponent, ProductListComponent];
 @NgModule({
   imports: [BrowserModule, HttpClientModule],
   bootstrap: [TemplateComponent],
